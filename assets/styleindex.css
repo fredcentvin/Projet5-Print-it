@@ -185,7 +185,6 @@ button {
 	padding-left:2em;
 	width: 65%;
 	margin-bottom: 1em;
-
 }
 
 #products {
@@ -282,7 +281,6 @@ footer {
 	align-items: center;
 }
 footer div {
-
 	position: relative;
 }
 .footer-logo {
@@ -294,7 +292,6 @@ footer div {
 	margin-bottom: 1em;
 	font-weight: 700;
 	font-size: 16px;
-
 }
 
 @media all and (max-width: 1250px) {
