@@ -21,10 +21,10 @@ const slides = [
 
 
 //variables//
-const leftbtn = document.querySelector (".arrow_left");	
-const rightbtn = document.querySelector (".arrow_right");
-const dots = document.querySelector (".dots");
-const img = document.querySelector (".banner-img");
+const leftbtn = document.querySelector(".arrow_left");	
+const rightbtn = document.querySelector(".arrow_right");
+const dots = document.querySelector(".dots");
+const img = document.querySelector(".banner-img");
 let index = 0;
 
 
@@ -55,14 +55,7 @@ function imageprecedente () {
 	if (index<0){
 	index = slides.length-1; 
 	}
-
-	let tagLine = slides[index].tagLine;
-	img.src = slides[index].image;
-	tabdots[index].classList.add("dot_selected");
-	//console.log(tagLine);
-	document.querySelector ("p").innerHTML=tagLine;
-	//console.log(banner.txt);
-
+	imagemoins()
 	})
 }
 imageprecedente(); 
@@ -72,15 +65,32 @@ function imagesuivante () {
 	const tabdots = document.querySelectorAll(".dots .dot");
 	tabdots[index].classList.remove("dot_selected");
 	index++;
-	//console.log (index);	
-	
+	// console.log (index);	
 	if (index>slides.length -1) {
 	index = 0;
 	}
-	let tagLine = slides[index].tagLine;
-	document.querySelector ('p').innerHTML=tagLine;
-	img.src = slides[index].image;
-	tabdots[index].classList.add("dot_selected");
+	imageplus()
 	})
 }
 imagesuivante();
+
+
+function imageplus () {
+  	const tabdots = document.querySelectorAll(".dots .dot");
+	let tagLine = slides[index].tagLine;
+	document.querySelector ("#banner p").innerHTML=tagLine;
+	img.src = slides[index].image;
+	tabdots[index].classList.add("dot_selected");
+}
+imageplus()
+
+function imagemoins () {
+	const tabdots = document.querySelectorAll(".dots .dot");
+	let tagLine = slides[index].tagLine;
+	img.src = slides[index].image;
+	tabdots[index].classList.add("dot_selected");
+	//console.log(tagLine);
+	document.querySelector ("#banner p").innerHTML=tagLine;
+	//console.log(banner.txt);
+}
+imagemoins()
